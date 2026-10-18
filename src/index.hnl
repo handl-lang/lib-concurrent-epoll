@@ -21,19 +21,19 @@
 --- under the task arrow; a nested `{ out: v }` pops the frame and
 --- resumes the caller's state with `result = v`.
 
-from "../concurrent" import { Task, Run }
+from "concurrent" import { Task, Run }
 from "bytes" import { at, concat, slice, from_list }
-from "../generated/libc-c-linux-x86_64/socket" import { socket, bind, connect, listen, accept4, recv, send, setsockopt, getsockopt, shutdown, AF_INET, SOCK_STREAM, SOCK_NONBLOCK, SOCK_CLOEXEC, SOL_SOCKET, SO_REUSEADDR, SOMAXCONN, MSG_NOSIGNAL, SO_ERROR }
-from "../generated/libc-c-linux-x86_64/epoll" import { epoll_create1, epoll_ctl, epoll_wait, EPOLL_CLOEXEC, EPOLLIN, EPOLLOUT, EPOLL_CTL_ADD, EPOLL_CTL_DEL, EPOLL_CTL_MOD }
-from "../generated/libc-c-linux-x86_64/fcntl" import { fcntl, F_GETFL, F_SETFL, O_NONBLOCK }
-from "../generated/curl-c-linux-x86_64/curl" import { curl_multi_init, curl_multi_add_handle, curl_multi_remove_handle, curl_multi_perform, curl_multi_fdset, curl_multi_timeout, curl_multi_info_read, curl_multi_cleanup, CURLM_OK, CURLMSG_DONE }
-from "../generated/libc-c-linux-x86_64/unistd" import { close }
-from "../generated/libc-c-linux-x86_64/errno" import { EAGAIN, EWOULDBLOCK, EINPROGRESS, EBADF }
-from "../generated/libc-c-linux-x86_64/time" import { clock_gettime, CLOCK_MONOTONIC }
-from "../generated/libc-c-linux-x86_64/inet" import { inet_pton }
+from "libc/socket" import { socket, bind, connect, listen, accept4, recv, send, setsockopt, getsockopt, shutdown, AF_INET, SOCK_STREAM, SOCK_NONBLOCK, SOCK_CLOEXEC, SOL_SOCKET, SO_REUSEADDR, SOMAXCONN, MSG_NOSIGNAL, SO_ERROR }
+from "libc/epoll" import { epoll_create1, epoll_ctl, epoll_wait, EPOLL_CLOEXEC, EPOLLIN, EPOLLOUT, EPOLL_CTL_ADD, EPOLL_CTL_DEL, EPOLL_CTL_MOD }
+from "libc/fcntl" import { fcntl, F_GETFL, F_SETFL, O_NONBLOCK }
+from "curl/curl" import { curl_multi_init, curl_multi_add_handle, curl_multi_remove_handle, curl_multi_perform, curl_multi_fdset, curl_multi_timeout, curl_multi_info_read, curl_multi_cleanup, CURLM_OK, CURLMSG_DONE }
+from "libc/unistd" import { close }
+from "libc/errno" import { EAGAIN, EWOULDBLOCK, EINPROGRESS, EBADF }
+from "libc/time" import { clock_gettime, CLOCK_MONOTONIC }
+from "libc/inet" import { inet_pton }
 from "math" import * as math
-from "../tls-libssl/tls-libssl" import * as tlsp
-from "../ws-c/ws-c" import * as wsc
+from "tls-libssl" import * as tlsp
+from "ws-c" import * as wsc
 
 -- ---------------------------------------------------------------
 -- small utilities
