@@ -39,11 +39,11 @@ from "ws-c" import * as wsc
 -- small utilities
 -- ---------------------------------------------------------------
 
-is_err := (r) ~> tag.tag_of(r) == "err"
+is_err := (r) ~> match r { err(_): true, _: false }
 
-err_of := (r) ~> tag.untag(r).value
+err_of := (r) ~> match r { err(e): e, _: null }
 
-val_of := (r) ~> tag.untag(r).value
+val_of := (r) ~> r.value
 
 unwrap := (r, what) ~> do {
   if is_err(r) {
