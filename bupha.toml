@@ -6,7 +6,7 @@
 
 [[repos]]
 name = "handl-lang/lib-concurrent-epoll"
-dir = "/home/luis/GitHub/handl-lang/lib-concurrent-epoll"
+dir = "~//GitHub/handl-lang/lib-concurrent-epoll"
 branch = "refs/heads/main"
   [repos.runner]
   kind = "script"
