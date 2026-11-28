@@ -1,7 +1,7 @@
 -- lib-concurrent-epoll: modules this package provides (entry defaults to
 -- src/index.hnl; N modules resolve to src/<name>/index.hnl).
 {
-  deps: { concurrent: "branch:main", libc: "branch:main", curl: "branch:main", "tls-libssl": "branch:main", "ws-c": "branch:main", math: "branch:main" },
+  deps: { concurrent: "branch:main", libc: "branch:main", curl: "branch:main", "tls-libssl": "branch:main", "ws-c": "branch:main" },
   modules: ["concurrent-epoll"],
   name: "concurrent-epoll",
   description: "Linux epoll scheduler for the concurrent step-arrow contract.",
